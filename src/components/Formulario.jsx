@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, Form, Container, Row, Col, Button } from "react-bootstrap";
 import Lista from "./Lista";
 
 const Formulario = () => {
-    
+    const citasLocalStorage = JSON.parse(localStorage.getItem('listaCitas')) || []
     const [nombreMascota, SetNombreMascota] = useState ("");
     const [nombreDuenio, SetnombreDuenio] = useState ("");
     const [fecha, SetFecha] = useState ("");
     const [hora, SetHora] = useState ("");
     const [sintomas, SetSintomas] = useState ("");
-    const [citas, SetCitas] = useState([]);
+    const [citas, SetCitas] = useState(citasLocalStorage);
     
+useEffect(()=>{
+localStorage.setItem('listaCitas', JSON.stringify(citas));
+},[citas])
+
+
     const handleSubmit = (e)=> {e.preventDefault();
         const cita = {nombreMascota, nombreDuenio, fecha, hora, sintomas};
         SetCitas ([...citas, cita]);
