@@ -8,13 +8,21 @@ const Formulario = () => {
     const [fecha, SetFecha] = useState ("");
     const [hora, SetHora] = useState ("");
     const [sintomas, SetSintomas] = useState ("");
-
+    const [citas, SetCitas] = useState([]);
+    
+    const handleSubmit = (e)=> {e.preventDefault();
+        const cita = {nombreMascota, nombreDuenio, fecha, hora, sintomas};
+        SetCitas ([...citas, cita]);
+    
+    };
+   
     return (
         <> 
         <Container className="mt-5">
             <Card className="" border="dark" >
         <Card.Header > <h2 className="ms-5 p-3">Turnos Veterinaria🐕🐈</h2></Card.Header>
-        <Form>
+
+        <Form onSubmit={handleSubmit}>
 
       <Form.Group className="m-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Nombre Mascota</Form.Label>
