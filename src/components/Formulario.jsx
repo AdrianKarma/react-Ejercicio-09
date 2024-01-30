@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Card, Form, Container, Row, Col, Button } from "react-bootstrap";
+import Lista from "./Lista";
 
 const Formulario = () => {
     
@@ -13,7 +14,11 @@ const Formulario = () => {
     const handleSubmit = (e)=> {e.preventDefault();
         const cita = {nombreMascota, nombreDuenio, fecha, hora, sintomas};
         SetCitas ([...citas, cita]);
-    
+        SetnombreDuenio ("");
+        SetNombreMascota("");
+        SetFecha("");
+        SetHora("");
+        SetSintomas("");
     };
    
     return (
@@ -63,6 +68,7 @@ const Formulario = () => {
       <Button className="m-3" type="submit">Crear cita Nueva</Button>
     </Form>
       </Card>
+      <Lista citas={citas} ></Lista>
       </Container>
         </>
     );
