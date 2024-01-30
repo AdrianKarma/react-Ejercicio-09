@@ -14,11 +14,17 @@ const Formulario = () => {
     const handleSubmit = (e)=> {e.preventDefault();
         const cita = {nombreMascota, nombreDuenio, fecha, hora, sintomas};
         SetCitas ([...citas, cita]);
-        //SetnombreDuenio ("");
-        //SetNombreMascota("");
-        //SetFecha("");
-        //SetHora("");
-        //SetSintomas("");
+        SetnombreDuenio ("");
+        SetNombreMascota("");
+        SetFecha("");
+        SetHora("");
+        SetSintomas("");
+    }
+    const borrarCita = (nombreCita)=>{
+        const copiaCitas =citas.filter((funcionCita)=> funcionCita !== nombreCita );
+        SetCitas(copiaCitas);
+   
+
     };
    
     return (
@@ -29,46 +35,46 @@ const Formulario = () => {
 
         <Form onSubmit={handleSubmit}>
 
-      <Form.Group className="m-3" controlId="exampleForm.ControlInput1">
+      <Form.Group className="m-3" controlId="nombreMascota">
         <Form.Label>Nombre Mascota</Form.Label>
         <Form.Control type="text" placeholder="Jan" 
-        required onChange={(e)=> SetNombreMascota(e.target.value)} 
+        onChange={(e)=> SetNombreMascota(e.target.value)} 
         value={nombreMascota}/>
          
       </Form.Group>
 
-      <Form.Group className="m-3 " controlId="exampleForm.ControlInput1">
+      <Form.Group className="m-3 " controlId="nombreDuenio">
         <Form.Label>Nombre Dueño</Form.Label>
         <Form.Control type="text" placeholder="Adrian"
-        required onChange={(e)=> SetnombreDuenio(e.target.value)} 
+         onChange={(e)=> SetnombreDuenio(e.target.value)} 
         value={nombreDuenio}/>
       </Form.Group>
 <Row>
 <Col sm={4}>
-      <Form.Group className="m-3 " controlId="exampleForm.ControlInput1">
+      <Form.Group className="m-3 " controlId="fecha">
         <Form.Label>Fecha</Form.Label>
-        <Form.Control type="date" required onChange={(e)=> SetFecha(e.target.value) } 
+        <Form.Control type="date"  onChange={(e)=> SetFecha(e.target.value) } 
         value={fecha}/>
       </Form.Group>
       </Col>
       <Col sm={4}>
-      <Form.Group className="m-3 " controlId="exampleForm.ControlInput1">
+      <Form.Group className="m-3 " controlId="hora">
         <Form.Label>Hora</Form.Label>
-        <Form.Control type="time" required onChange={(e)=> SetHora(e.target.value)} 
+        <Form.Control type="time"  onChange={(e)=> SetHora(e.target.value)} 
         value={hora}/>
       </Form.Group>
       </Col>
       </Row>
-      <Form.Group className="m-3 " controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="m-3 " controlId="sintomas">
         <Form.Label>Sintomas</Form.Label>
-        <Form.Control as="textarea" rows={3} resize="none" placeholder="Escriba los Sintomas de la Mascota" required onChange={(e)=> SetSintomas(e.target.value)} 
+        <Form.Control as="textarea" rows={3} resize="none" placeholder="Escriba los Sintomas de la Mascota"  onChange={(e)=> SetSintomas(e.target.value)} 
         value={sintomas}/>
       </Form.Group>
       
       <Button className="m-3" type="submit">Crear cita Nueva</Button>
     </Form>
       </Card>
-      <Lista citas={citas} ></Lista>
+      <Lista citas={citas} borrarCita={borrarCita}></Lista>
       </Container>
         </>
     );

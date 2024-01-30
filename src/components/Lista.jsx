@@ -5,7 +5,7 @@ const Lista = (props) => {
     return (
         <div className="Master ">
             {
-            props.citas.map((cita, posicion)=> <Cita key={posicion} cita={cita} ></Cita>)
+            props.citas.map((item, posicion)=> <Cita key={posicion} cita={item} borrarCita={props.borrarCita}></Cita>)
             }
         </div>
     );
