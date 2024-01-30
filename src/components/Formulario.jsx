@@ -14,11 +14,11 @@ const Formulario = () => {
     const handleSubmit = (e)=> {e.preventDefault();
         const cita = {nombreMascota, nombreDuenio, fecha, hora, sintomas};
         SetCitas ([...citas, cita]);
-        SetnombreDuenio ("");
-        SetNombreMascota("");
-        SetFecha("");
-        SetHora("");
-        SetSintomas("");
+        //SetnombreDuenio ("");
+        //SetNombreMascota("");
+        //SetFecha("");
+        //SetHora("");
+        //SetSintomas("");
     };
    
     return (

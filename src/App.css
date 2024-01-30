@@ -3,3 +3,23 @@ body{
 }
 
 textarea { resize: none; }
+
+.CardCita{
+ 
+  background-color: lightgrey;
+  margin: 5px;
+  padding: 5px;
+width: 300px;
+}
+
+.Master{display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;}
+
+  .avatarPerruno{
+    background-color: rgb(74, 153, 218);
+    width:70px;
+    height: 70px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
