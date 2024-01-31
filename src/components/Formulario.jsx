@@ -36,13 +36,13 @@ localStorage.setItem('listaCitas', JSON.stringify(citas));
         <> 
         <Container className="mt-5">
             <Card className="" border="dark" >
-        <Card.Header > <h2 className="ms-5 p-3">Turnos Veterinaria🐕🐈</h2></Card.Header>
+        <Card.Header > <h2 className="ms-5 p-1">Turnos Veterinaria🐕🐈</h2></Card.Header>
 
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="">
 
       <Form.Group className="m-3" controlId="nombreMascota">
         <Form.Label>Nombre Mascota</Form.Label>
-        <Form.Control type="text" placeholder="Jan" 
+        <Form.Control className="cuadroForm" type="text" placeholder="Jan" 
         onChange={(e)=> SetNombreMascota(e.target.value)} 
         value={nombreMascota}/>
          
@@ -50,7 +50,7 @@ localStorage.setItem('listaCitas', JSON.stringify(citas));
 
       <Form.Group className="m-3 " controlId="nombreDuenio">
         <Form.Label>Nombre Dueño</Form.Label>
-        <Form.Control type="text" placeholder="Adrian"
+        <Form.Control className="cuadroForm"  type="text" placeholder="Adrian"
          onChange={(e)=> SetnombreDuenio(e.target.value)} 
         value={nombreDuenio}/>
       </Form.Group>
@@ -72,7 +72,7 @@ localStorage.setItem('listaCitas', JSON.stringify(citas));
       </Row>
       <Form.Group className="m-3 " controlId="sintomas">
         <Form.Label>Sintomas</Form.Label>
-        <Form.Control as="textarea" rows={3} resize="none" placeholder="Escriba los Sintomas de la Mascota"  onChange={(e)=> SetSintomas(e.target.value)} 
+        <Form.Control className="cuadroForm2" as="textarea" rows={3}  placeholder="Escriba los Sintomas de la Mascota"  onChange={(e)=> SetSintomas(e.target.value)} 
         value={sintomas}/>
       </Form.Group>
       
