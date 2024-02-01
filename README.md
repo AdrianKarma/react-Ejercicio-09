@@ -6,11 +6,10 @@ Crear una aplicación web que permite cargar un formulario para registrar una ci
 La aplicación debe permitir borrar las citas y estas deben ser guardadas en el localstorage.
 ![tp09-1](https://github.com/AdrianKarma/react-Ejercicio-09/assets/20958616/833f28b6-3746-4296-9184-9e63f3111813)
 
-Si hay citas debo mostrarlas, con sus respectivos datos dentro de una card:
+- Si hay citas debo mostrarlas, con sus respectivos datos dentro de una card:
 ![tp09-2](https://github.com/AdrianKarma/react-Ejercicio-09/assets/20958616/925b1a65-cf41-493e-9a2a-0e6cd1785ae0)
 
 
-![tp01](https://github.com/AdrianKarma/react-Ejercicio-01/assets/20958616/b193217b-0ddb-45c4-a6d0-3ee7b34bd612)
 ##
 
 
